@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: dnd-characters-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dnd_characters
+    username: postgres
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+dice:
+  api-url: https://rolz.org/api/

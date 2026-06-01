@@ -26,4 +26,10 @@ public class GlobalExceptionHandler {
         }
         return errors;
     }
+
+    @ExceptionHandler(InvalidSkillException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String, String> handleInvalidSkill(InvalidSkillException ex) {
+        return Map.of("error", ex.getMessage());
+    }
 }

@@ -2,12 +2,13 @@ package com.nahuel.dnd_characters_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
+@EnableFeignClients
 public class DndCharactersApiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DndCharactersApiApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(DndCharactersApiApplication.class, args);
+    }
 }
