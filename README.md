@@ -128,8 +128,8 @@ GET /characters/1/roll?skill=strength
 - [x] PostgreSQL
 - [x] Skill roll system with Feign
 - [ ] Inventory system
-- [ ] Combat between characters
-- [ ] Character backstory generator with AI
+- [ ] Backstory for characters
+- [ ] Combat with AI narration (epic / dramatic / comic)
 
 ## License
 
