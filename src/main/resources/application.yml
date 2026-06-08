@@ -3,12 +3,13 @@ spring:
     name: dnd-characters-api
   datasource:
     url: jdbc:postgresql://localhost:5432/dnd_characters
-    username: postgres
-    password: admin
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+    open-in-view: false
 
 server:
   port: 8080
