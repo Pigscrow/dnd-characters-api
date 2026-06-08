@@ -1,0 +1,127 @@
+# D&D Characters API
+
+A REST API for managing Dungeons & Dragons characters, built with Spring Boot.
+
+## Features
+
+- Full CRUD for D&D characters
+- Skill roll system with D&D modifier calculation (1d20 + modifier)
+- Input validation (stats between 1-20, required fields)
+- Interactive API documentation with Swagger UI
+
+## Tech Stack
+
+- Java 21
+- Spring Boot 3.4.5
+- Spring Data JPA
+- PostgreSQL
+- OpenFeign (external dice API integration)
+- Swagger / OpenAPI 3
+
+## Getting Started
+
+### Prerequisites
+
+- Java 21
+- PostgreSQL 16
+
+### Database Setup
+
+Create a PostgreSQL database:
+
+```sql
+CREATE DATABASE dnd_characters;
+```
+
+### Configuration
+
+Update `src/main/resources/application.yml` with your PostgreSQL credentials:
+
+```yaml
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dnd_characters
+    username: your_username
+    password: your_password
+```
+
+### Run
+
+```bash
+./mvnw spring-boot:run
+```
+
+The API will be available at `http://localhost:8080`
+
+## API Documentation
+
+Once running, explore all endpoints at:
+
+`http://localhost:8080/swagger-ui.html`
+
+## Endpoints
+
+### Characters
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/characters` | Get all characters |
+| GET | `/characters/{id}` | Get character by ID |
+| POST | `/characters` | Create a new character |
+| PUT | `/characters/{id}` | Update a character |
+| DELETE | `/characters/{id}` | Delete a character |
+
+### Dice
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/characters/{id}/roll?skill={skill}` | Roll a d20 skill check |
+
+Valid skills: `strength`, `dexterity`, `constitution`, `intelligence`, `wisdom`, `charisma`
+
+### Example Request
+
+```json
+POST /characters
+{
+  "name": "Aragorn",
+  "race": "Human",
+  "characterClass": "Warrior",
+  "strength": 18,
+  "dexterity": 14,
+  "constitution": 16,
+  "intelligence": 12,
+  "wisdom": 13,
+  "charisma": 15
+}
+```
+
+### Example Skill Roll Response
+
+```json
+GET /characters/1/roll?skill=strength
+
+{
+  "character": "Aragorn",
+  "skill": "strength",
+  "roll": 17,
+  "modifier": 4,
+  "total": 21,
+  "details": "1d20[17] + modifier(4) = 21"
+}
+```
+
+## Roadmap
+
+- [x] Character CRUD
+- [x] Input validation and error handling
+- [x] Swagger / OpenAPI documentation
+- [x] PostgreSQL
+- [x] Skill roll system with Feign
+- [ ] Inventory system
+- [ ] Combat between characters
+- [ ] Character backstory generator with AI
+
+## License
+
+MIT
