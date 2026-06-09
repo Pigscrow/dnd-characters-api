@@ -5,6 +5,8 @@ import com.nahuel.dnd_characters_api.exception.CharacterNotFoundException;
 import com.nahuel.dnd_characters_api.model.Character;
 import com.nahuel.dnd_characters_api.repository.CharacterRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -17,8 +19,8 @@ public class CharacterService {
         this.repository = repository;
     }
 
-    public List<Character> getAll() {
-        return repository.findAll();
+    public Page<Character> getAll(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 
     public Character getById(Long id) {

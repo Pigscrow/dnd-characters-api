@@ -8,6 +8,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 
 import java.util.List;
 
@@ -23,9 +26,10 @@ public class CharacterController {
     }
 
     @GetMapping
-    @Operation(summary = "Get all characters")
-    public List<Character> getAll() {
-        return service.getAll();
+    @Operation(summary = "Get all characters (paginated)")
+    public Page<Character> getAll(
+            @PageableDefault(size = 20, sort = "name") Pageable pageable) {
+        return service.getAll(pageable);
     }
 
     @GetMapping("/{id}")
