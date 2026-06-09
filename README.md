@@ -35,14 +35,23 @@ CREATE DATABASE dnd_characters;
 
 ### Configuration
 
-Update `src/main/resources/application.yml` with your PostgreSQL credentials:
+Set the following environment variables with your PostgreSQL credentials:
 
-```yaml
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/dnd_characters
-    username: your_username
-    password: your_password
+| Variable | Description |
+|----------|-------------|
+| `DB_USERNAME` | PostgreSQL username |
+| `DB_PASSWORD` | PostgreSQL password |
+
+On Windows (Command Prompt):
+```cmd
+set DB_USERNAME=your_username
+set DB_PASSWORD=your_password
+```
+
+On Mac/Linux:
+```bash
+export DB_USERNAME=your_username
+export DB_PASSWORD=your_password
 ```
 
 ### Run
@@ -119,8 +128,8 @@ GET /characters/1/roll?skill=strength
 - [x] PostgreSQL
 - [x] Skill roll system with Feign
 - [ ] Inventory system
-- [ ] Combat between characters
-- [ ] Character backstory generator with AI
+- [ ] Backstory for characters
+- [ ] Combat with AI narration (epic / dramatic / comic)
 
 ## License
 
