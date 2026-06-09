@@ -8,6 +8,8 @@ A REST API for managing Dungeons & Dragons characters, built with Spring Boot.
 - Skill roll system with D&D modifier calculation (1d20 + modifier)
 - Input validation (stats between 1-20, required fields)
 - Interactive API documentation with Swagger UI
+- Paginated character listing
+- CORS enabled for frontend integration
 
 ## Tech Stack
 
@@ -74,11 +76,13 @@ Once running, explore all endpoints at:
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/characters` | Get all characters |
+| GET | `/characters?page=0&size=20` | Get all characters (paginated) |
 | GET | `/characters/{id}` | Get character by ID |
 | POST | `/characters` | Create a new character |
 | PUT | `/characters/{id}` | Update a character |
 | DELETE | `/characters/{id}` | Delete a character |
+
+> **Pagination parameters:** `page` (default: 0), `size` (default: 20), `sort` (default: `name,asc`)
 
 ### Dice
 
@@ -127,6 +131,7 @@ GET /characters/1/roll?skill=strength
 - [x] Swagger / OpenAPI documentation
 - [x] PostgreSQL
 - [x] Skill roll system with Feign
+- [x] Pagination and CORS support
 - [ ] Inventory system
 - [ ] Backstory for characters
 - [ ] Combat with AI narration (epic / dramatic / comic)
