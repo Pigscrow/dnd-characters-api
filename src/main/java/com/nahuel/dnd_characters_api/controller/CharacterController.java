@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springdoc.core.annotations.ParameterObject;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class CharacterController {
     @GetMapping
     @Operation(summary = "Get all characters (paginated)")
     public Page<Character> getAll(
-            @PageableDefault(size = 20, sort = "name") Pageable pageable) {
+            @ParameterObject @PageableDefault(size = 20, sort = "name") Pageable pageable) {
         return service.getAll(pageable);
     }
 
