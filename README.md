@@ -29,7 +29,12 @@ A REST API for managing Dungeons & Dragons characters, built with Spring Boot.
 
 ### Database Setup
 
-Open a terminal and connect to PostgreSQL:
+**On Windows**, the easiest way is to create the database visually using **pgAdmin**:
+1. Open pgAdmin
+2. Right-click on **Databases** → **Create** → **Database**
+3. Name it `dnd_characters` and click **Save**
+
+**On Mac/Linux**, open a terminal and connect to PostgreSQL:
 
 ```bash
 psql -U postgres
@@ -42,8 +47,6 @@ CREATE DATABASE dnd_characters;
 ```
 
 Type `\q` to exit.
-
-Alternatively, you can create it visually using **pgAdmin**.
 
 ### Configuration
 
@@ -70,14 +73,19 @@ export DB_PASSWORD=your_password
 
 ### Run
 
+On Mac/Linux:
 ```bash
 ./mvnw spring-boot:run
 ```
 
 If you get a permission error on Mac/Linux, run this first:
-
 ```bash
 chmod +x mvnw
+```
+
+On Windows (Command Prompt):
+```cmd
+mvnw spring-boot:run
 ```
 
 The API will be available at `http://localhost:8080`
