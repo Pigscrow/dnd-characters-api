@@ -13,18 +13,18 @@ public class Character {
     private String name;
     private String race;
     private String characterClass;
-    private int strength;
-    private int dexterity;
-    private int constitution;
-    private int intelligence;
-    private int wisdom;
-    private int charisma;
+    private Integer strength;
+    private Integer dexterity;
+    private Integer constitution;
+    private Integer intelligence;
+    private Integer wisdom;
+    private Integer charisma;
 
     public Character() {}
 
     public Character(String name, String race, String characterClass,
-                     int strength, int dexterity, int constitution,
-                     int intelligence, int wisdom, int charisma) {
+                     Integer strength, Integer dexterity, Integer constitution,
+                     Integer intelligence, Integer wisdom, Integer charisma) {
         this.name = name;
         this.race = race;
         this.characterClass = characterClass;
@@ -48,21 +48,21 @@ public class Character {
     public String getCharacterClass() { return characterClass; }
     public void setCharacterClass(String characterClass) { this.characterClass = characterClass; }
 
-    public int getStrength() { return strength; }
-    public void setStrength(int strength) { this.strength = strength; }
+    public Integer getStrength() { return strength; }
+    public void setStrength(Integer strength) { this.strength = strength; }
 
-    public int getDexterity() { return dexterity; }
-    public void setDexterity(int dexterity) { this.dexterity = dexterity; }
+    public Integer getDexterity() { return dexterity; }
+    public void setDexterity(Integer dexterity) { this.dexterity = dexterity; }
 
-    public int getConstitution() { return constitution; }
-    public void setConstitution(int constitution) { this.constitution = constitution; }
+    public Integer getConstitution() { return constitution; }
+    public void setConstitution(Integer constitution) { this.constitution = constitution; }
 
-    public int getIntelligence() { return intelligence; }
-    public void setIntelligence(int intelligence) { this.intelligence = intelligence; }
+    public Integer getIntelligence() { return intelligence; }
+    public void setIntelligence(Integer intelligence) { this.intelligence = intelligence; }
 
-    public int getWisdom() { return wisdom; }
-    public void setWisdom(int wisdom) { this.wisdom = wisdom; }
+    public Integer getWisdom() { return wisdom; }
+    public void setWisdom(Integer wisdom) { this.wisdom = wisdom; }
 
-    public int getCharisma() { return charisma; }
-    public void setCharisma(int charisma) { this.charisma = charisma; }
+    public Integer getCharisma() { return charisma; }
+    public void setCharisma(Integer charisma) { this.charisma = charisma; }
 }

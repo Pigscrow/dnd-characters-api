@@ -13,28 +13,34 @@ public record CharacterRequest(
         @NotBlank(message = "Character class is required")
         String characterClass,
 
+        @NotNull(message = "Strength is required")
         @Min(value = 1, message = "Strength must be between 1 and 20")
         @Max(value = 20, message = "Strength must be between 1 and 20")
-        int strength,
+        Integer strength,
 
+        @NotNull(message = "Dexterity is required")
         @Min(value = 1, message = "Dexterity must be between 1 and 20")
         @Max(value = 20, message = "Dexterity must be between 1 and 20")
-        int dexterity,
+        Integer dexterity,
 
+        @NotNull(message = "Constitution is required")
         @Min(value = 1, message = "Constitution must be between 1 and 20")
         @Max(value = 20, message = "Constitution must be between 1 and 20")
-        int constitution,
+        Integer constitution,
 
+        @NotNull(message = "Intelligence is required")
         @Min(value = 1, message = "Intelligence must be between 1 and 20")
         @Max(value = 20, message = "Intelligence must be between 1 and 20")
-        int intelligence,
+        Integer intelligence,
 
+        @NotNull(message = "Wisdom is required")
         @Min(value = 1, message = "Wisdom must be between 1 and 20")
         @Max(value = 20, message = "Wisdom must be between 1 and 20")
-        int wisdom,
+        Integer wisdom,
 
+        @NotNull(message = "Charisma is required")
         @Min(value = 1, message = "Charisma must be between 1 and 20")
         @Max(value = 20, message = "Charisma must be between 1 and 20")
-        int charisma
+        Integer charisma
 
 ) {}
